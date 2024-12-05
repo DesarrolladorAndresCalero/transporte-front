@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url('https://i0.wp.com/tekiosmag.com/wp-content/uploads/2021/10/blitzment-t6HM5KA1df4-u333nsplash-e1634528747419.jpg?fit=1277%2C900&ssl=1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
