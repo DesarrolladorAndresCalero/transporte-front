@@ -57,12 +57,30 @@
     </div>
 
     <div class="boton">
-      <button class="btn btn-primary btn-guardar" type="submit" [disabled]="conductorForm.invalid" >
+      <button class="btn btn-primary btn-guardar" type="submit" (click)="openModal()" [disabled]="conductorForm.invalid" >
         G U A R D A R
       </button>
     </div>
   </form>
+
+  <button class="btn btn-primary btn-guardar" (click)="irAListadoConductores()">
+    Ver Listado de Conductores
+  </button>
 </div>
 
-<app-conductores/>
+
+
+<div *ngIf="isModalVisible" class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        El usuario ha sido registrado correctamente.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <router-outlet />

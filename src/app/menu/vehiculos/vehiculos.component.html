@@ -1,0 +1,33 @@
+<div class="container">
+  <h2 class="title">Listado de Vehículos</h2>
+
+  <button class="btn btn-success mb-3" (click)="agregarNuevoVehiculo()">
+    Agregar Nuevo Vehiculo
+  </button>
+
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Modelo</th>
+        <th>Placa</th>
+        <th>Capacidad</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of vehiculos">
+        <td>{{ vehiculo.modelo }}</td>
+        <td>{{ vehiculo.placa }}</td>
+        <td>{{ vehiculo.capacidad }}</td>
+        <td>
+          <button
+            class="btn btn-danger"
+            (click)="desasociarVehiculo(vehiculo.id)"
+          >
+            Desasociar Vehiculo
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

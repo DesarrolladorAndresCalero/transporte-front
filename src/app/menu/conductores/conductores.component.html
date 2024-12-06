@@ -1,1 +1,35 @@
-<p>conductores works!</p>
+<div class="container">
+    <h2 class="title">Listado de Conductores</h2>
+  
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Identificación</th>
+          <th>Teléfono</th>
+          <th>Vehículos</th>
+          <th>Pedidos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let conductor of conductores">
+          <td>{{ conductor.nombre }}</td>
+          <td>{{ conductor.apellido }}</td>
+          <td>{{ conductor.identificacion }}</td>
+          <td>{{ conductor.telefono }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="visualizarVehiculos(conductor.id)">
+              Visualizar Vehículos
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-secondary" (click)="visualizarPedidos(conductor.id)">
+              Visualizar Pedidos
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

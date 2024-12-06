@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 class="title">Listado de Pedidos</h2>
+
+    <button class="btn btn-success mb-3" (click)="agregarNuevoPedido()">
+        Agregar Nuevo Pedido
+    </button>
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Dirección</th>
+          <th>Tipo de Pedido</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pedido of pedidos">
+          <td>{{ pedido.direccion }}</td>
+          <td>{{ pedido.tipoPedido }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="desasociarPedido(pedido.id)">
+              Desasociar Pedido
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
