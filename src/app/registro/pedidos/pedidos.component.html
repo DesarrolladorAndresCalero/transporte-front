@@ -1,1 +1,30 @@
-<p>pedidos works!</p>
+<div class="formularioRegistro">
+    <div class="titulo">
+      <h2>REGISTRAR VEHICULO</h2>
+    </div>
+    <form [formGroup]="pedidoForm" (ngSubmit)="guardarVehiculo()">
+      <div class="form-group">
+        <label class="texto"><i class="bi bi-person-circle"></i> direccion</label>
+        <input type="text" name="direccion" id="direccion" formControlName="direccion" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="texto"><i class="bi bi-person-circle"></i> tipo de pedido</label>
+        <input type="text" name="tipopedido" id="tipopedido" formControlName="tipoPedido" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="texto"><i class="bi bi-person-circle"></i> ID Conductor</label>
+        <input type="text" name="idConductor" id="idConductor" formControlName="idConductor" class="form-control" readonly />
+      </div>
+    
+      <div class="boton">
+        <button class="btn btn-primary btn-guardar" type="submit" (click)="openModal()" [disabled]="pedidoForm.invalid">
+          G U A R D A R
+        </button>
+      </div>
+    </form>
+    
+    <button class="btn btn-primary btn-guardar" (click)="irAListadoConductores()">
+      Ver Listado de Conductores
+    </button>
+  </div>
+  

@@ -24,14 +24,17 @@ export class VehiculosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-    this.conductorId = Number(this.route.snapshot.paramMap.get('id'));
-    console.log('ID del conductor:', this.conductorId);
-    this.cargarVehiculo();
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('el id que llega es', this.id);
+    if (isNaN(this.id)) {
+      console.error('El ID del conductor no es válido');
+    } else {
+      this.cargarVehiculo();
+    }
   }
 
   cargarVehiculo(): void {
-    this.vehiculosService.getVehiculoByConductorId(this.conductorId).subscribe({
+    this.vehiculosService.getVehiculoByConductorId(this.id).subscribe({
       next: (data) => {
         console.log('Datos recibidos:', data);
         this.vehiculos  = data;
@@ -56,7 +59,11 @@ export class VehiculosComponent implements OnInit {
   }
 
   agregarNuevoVehiculo(): void {
-    this.router.navigate(['/crear-vehiculo', this.id]);
+    if (this.id) {
+      this.router.navigate(['/crear-vehiculo', this.id]);
+    } else {
+      console.error('ID del conductor no disponible');
+    }
   }
 
 }

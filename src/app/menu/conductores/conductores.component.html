@@ -4,6 +4,7 @@
     <table class="custom-table">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Nombre</th>
           <th>Apellido</th>
           <th>Identificación</th>
@@ -14,6 +15,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let conductor of conductores">
+          <td>{{ conductor.id }}</td>
           <td>{{ conductor.nombre }}</td>
           <td>{{ conductor.apellido }}</td>
           <td>{{ conductor.identificacion }}</td>

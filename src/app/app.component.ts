@@ -65,7 +65,4 @@ export class AppComponent implements OnInit {
     
   }
   
-  ngOnDestroy(): void {
-    console.log('Componente destruido. Limpieza completada.');
-  }
 }

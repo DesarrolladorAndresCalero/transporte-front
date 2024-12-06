@@ -1,1 +1,34 @@
-<p>vehiculos works!</p>
+<div class="formularioRegistro">
+    <div class="titulo">
+      <h2>REGISTRAR VEHICULO</h2>
+    </div>
+    <form [formGroup]="vehiculoForm" (ngSubmit)="guardarVehiculo()">
+      <div class="form-group">
+        <label class="texto"><i class="bi bi-person-circle"></i> Modelo</label>
+        <input type="text" name="modelo" id="modelo" formControlName="modelo" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="texto"><i class="bi bi-person-circle"></i> Placa</label>
+        <input type="text" name="placa" id="placa" formControlName="placa" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="texto"><i class="bi bi-person-circle"></i> Capacidad</label>
+        <input type="text" name="capacidad" id="capacidad" formControlName="capacidad" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="texto"><i class="bi bi-person-circle"></i> ID Conductor</label>
+        <input type="text" name="idConductor" id="idConductor" formControlName="idConductor" class="form-control" readonly />
+      </div>
+    
+      <div class="boton">
+        <button class="btn btn-primary btn-guardar" type="submit" (click)="openModal()" [disabled]="vehiculoForm.invalid">
+          G U A R D A R
+        </button>
+      </div>
+    </form>
+    
+    <button class="btn btn-primary btn-guardar" (click)="irAListadoConductores()">
+      Ver Listado de Conductores
+    </button>
+  </div>
+  

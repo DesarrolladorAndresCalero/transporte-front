@@ -24,14 +24,17 @@ export class PedidosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-    this.conductorId = Number(this.route.snapshot.paramMap.get('id'));
-    console.log('ID del conductor:', this.conductorId);
-    this.cargarPedido();
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('ID del conductor:', this.id);
+    if (isNaN(this.id)) {
+      console.error('El ID del conductor no es válido');
+    } else {
+      this.cargarPedido();
+    }
   }
 
   cargarPedido(): void {
-    this.pedidosService.getVehiculoByConductorId(this.conductorId).subscribe({
+    this.pedidosService.getVehiculoByConductorId(this.id).subscribe({
       next: (data) => {
         console.log('Datos recibidos:', data);
         this.pedidos  = data;
@@ -56,6 +59,10 @@ export class PedidosComponent implements OnInit {
   }
 
   agregarNuevoPedido(): void {
-    this.router.navigate(['/crear-pedido', this.id]);
+    if (this.id) {
+      this.router.navigate(['/crear-pedido', this.id]);
+    } else {
+      console.error('ID del conductor no disponible');
+    }
   }
 }
