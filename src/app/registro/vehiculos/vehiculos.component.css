@@ -1,84 +1,148 @@
+/* 🔹 Estilo de la tarjeta principal (Formulario) */
 .formularioRegistro {
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-top: 6%;
-    padding: 1%;
-    background-color: rgb(103, 0, 103);
-    box-shadow: 1px 2px 10px;
-    border-radius: 10px;
-  }
-  
-  .form-group {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-control {
-    box-shadow: 1px 2px black;
-    background-color: rgb(162, 0, 162);
-    border: none;
-    color: white;
-    height: 45px;
-    padding-left: 40px;
-    position: relative;
-  }
-  
-  .form-group label {
-    margin-bottom: 5px;
-    color: white;
-    display: flex;
-    align-items: center;
-  }
-  
-  .form-group label i {
-    margin-right: 10px; /* Espaciado entre el icono y el texto */
-    color: #ffccff;
-  }
-  
-  .form-group small {
-    min-height: 20px;
-    color: #ffcccc;
-    font-size: 0.9em;
-  }
-  
-  .input-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 1.2em; /* Tamaño del icono */
-  }
-  
-  .boton {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    display: flex;
-    justify-content: space-around;
-    color: black;
-  }
-  
-  .btn-guardar {
-    background-color: rgb(162, 0, 162);
-    border: none;
-    box-shadow: 0px 0px 3px black;
-  }
-  
-  .titulo {
-    display: flex;
-    justify-content: center;
-    color: white;
-  }
-  
-  .modal-content {
-    width: 100%;
-    color: white;
-  }
+  width: 30%;
+  margin: 6% auto;
+  padding: 2%;
+  background: rgba(0, 0, 0, 0.8); /* Negro con opacidad */
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .modal{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+/* 🎨 Efecto hover en la tarjeta */
+.formularioRegistro:hover {
+  transform: scale(1.03);
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* 🔹 Estilos de los grupos de formularios */
+.form-group {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 🎨 Campos de entrada */
+.form-control {
+  background-color: rgba(30, 30, 30, 0.9); /* Fondo oscuro con transparencia */
+  border: 2px solid transparent;
+  color: white;
+  height: 45px;
+  padding-left: 40px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* 🌟 Efecto cuando el input está en foco */
+.form-control:focus {
+  border: 2px solid #1db954; /* Verde tipo Uber/Bolt */
+  outline: none;
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.7);
+}
+
+/* 🔹 Etiquetas */
+.form-group label {
+  margin-bottom: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* 🔹 Íconos dentro de los labels */
+.form-group label i {
+  margin-right: 10px;
+  color: #1db954; /* Verde llamativo */
+}
+
+/* 🔹 Mensajes de error */
+.form-group small {
+  min-height: 20px;
+  color: #ff4d4d; /* Rojo suave */
+  font-size: 0.9em;
+}
+
+/* 🔹 Íconos dentro de los inputs */
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.2em;
+}
+
+/* 🔹 Botón de acción */
+.boton {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+/* 🔹 Estilo del botón */
+.btn-guardar {
+  background: linear-gradient(135deg, #1db954, #0e7c34);
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 🎨 Efecto hover en el botón */
+.btn-guardar:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(29, 185, 84, 0.5);
+  background: linear-gradient(135deg, #0e7c34, #1db954);
+}
+
+/* 🎨 Efecto cuando el botón es clickeado */
+.btn-guardar:active {
+  transform: scale(0.98);
+  box-shadow: 0px 3px 10px rgba(29, 185, 84, 0.3);
+}
+
+/* 🔹 Título centrado */
+.titulo {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* 🔹 Estilos del modal */
+.modal-content {
+  width: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.9); /* Más oscuro */
+  border-radius: 15px;
+  padding: 20px;
+}
+
+/* 🔹 Posicionamiento del modal */
+.modal {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 🎨 Animación para la tarjeta al aparecer */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
   }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.formularioRegistro {
+  animation: fadeIn 0.5s ease-in-out;
+}
